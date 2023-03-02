@@ -19,7 +19,7 @@ CHAT_GPT_MODEL_ROLE = "You are a helpful assistant."
 messages = [{"role": "system", "content": CHAT_GPT_MODEL_ROLE}]
 
 def chatgpt_bot(input):
-    openai.ChatCompletion.create(
+    response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
@@ -28,4 +28,7 @@ def chatgpt_bot(input):
                 {"role": "user", "content": "Where was it played?"}
             ]
         )
+    return response
+
+
 
