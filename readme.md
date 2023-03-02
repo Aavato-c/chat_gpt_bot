@@ -12,3 +12,4 @@ To use:
 6. Save the key in a ".env" -file in the working directory in this format:
    API_OPENAI=`<YOUR API KEY GOES HERE>`
 7. Run the chat_bot.py via "python3 chat_bot.py"
+8. *NB! The log of the chat is stored in the chat_log.json -file. It is ovewritten every time you restart the program.*
