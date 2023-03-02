@@ -27,9 +27,9 @@ def chatgpt_bot(user_name):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=messages)
-    print(response)
-    print(response['choices'][0]['message']['content'])
-    return response
+    
+    messages.append({"role": "assistant", "content": response['choices'][0]['message']['content']})
+    print(f"ChatGPT: {response['choices'][0]['message']['content']})")
 
 
 def initiate_dialogue():
@@ -37,7 +37,8 @@ def initiate_dialogue():
     user_name = input("What is your name? ")
     print("Thanks. Let's chat!")
     time.sleep(1)
-    return chatgpt_bot(user_name)
+    while True:
+        chatgpt_bot(user_name)
 
 
 def main():
