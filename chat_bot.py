@@ -28,9 +28,6 @@ logger = setup_logger('default_logger', 'log_of_bot.log')
 # Chat logger
 chat_logger = setup_logger('second_logger', 'second_logfile.log')
 
-# Consts
-CHAT_LOG_FILE = "Chat_log.json"
-
 # Openai tunings for the bot
 CHAT_GPT_MODEL_ROLE = "You are a helpful assistant."
 
