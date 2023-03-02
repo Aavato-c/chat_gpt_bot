@@ -26,7 +26,7 @@ def setup_logger(name, log_file, level=logging.INFO):
 logger = setup_logger('default_logger', 'log_of_bot.log')
 
 # Chat logger
-chat_logger = setup_logger('second_logger', 'second_logfile.log')
+chat_logger = setup_logger('chat_logger', 'chat_log.log')
 
 # Openai tunings for the bot
 CHAT_GPT_MODEL_ROLE = "You are a helpful assistant."
@@ -47,7 +47,7 @@ def chatgpt_bot(user_name):
     messages.append({"role": "assistant", "content": response['choices'][0]['message']['content']})
     print(f"ChatGPT: {response['choices'][0]['message']['content']})")
     
-    chat_logger.info(f"ChatGPT: {response['choices'][0]['message']['content']})")
+    chat_logger.info(f"ChatGPT: {response['choices'][0]['message']['content']}")
 
 
 def initiate_dialogue():
