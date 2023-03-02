@@ -2,6 +2,7 @@ import os
 import openai
 import logging
 import json
+import time
 
 # Store your api key in .env dile in the same directory as this file
 openai.api_key = os.environ.get('API_OPENAI')
@@ -18,7 +19,10 @@ CHAT_GPT_MODEL_ROLE = "You are a helpful assistant."
 # Initiate the chat log
 messages = [{"role": "system", "content": CHAT_GPT_MODEL_ROLE}]
 
-def chatgpt_bot(input):
+def chatgpt_bot(user_name):
+    os.system('cls' if os.name == 'nt' else 'clear')
+    input_text = input(f"{user_name}: ")
+    messages.append({"role": "user", "content": input_text})
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -35,6 +39,8 @@ def initiate_dialogue():
     print("This is a python program that uses OpenAI's ChatGPT API to chat with you.\n\n")
     user_name = input("What is your name? ")
     print("Thanks. Let's chat!")
+    time.sleep(1)
+    return chatgpt_bot(user_name)
 
 
 def main():
