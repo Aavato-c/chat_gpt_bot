@@ -20,7 +20,6 @@ CHAT_GPT_MODEL_ROLE = "You are a helpful assistant."
 messages = [{"role": "system", "content": CHAT_GPT_MODEL_ROLE}]
 
 def chatgpt_bot(user_name):
-    os.system('cls' if os.name == 'nt' else 'clear')
     input_text = input(f"{user_name}: ")
     messages.append({"role": "user", "content": input_text})
     
@@ -37,6 +36,7 @@ def initiate_dialogue():
     user_name = input("What is your name? ")
     print("Thanks. Let's chat!")
     time.sleep(1)
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         chatgpt_bot(user_name)
 
