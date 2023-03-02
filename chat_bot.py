@@ -15,6 +15,7 @@ CHAT_LOG_FILE = "Chat_log.json"
 # Openai tunings for the bot
 CHAT_GPT_MODEL_ROLE = "You are a helpful assistant."
 
+# Initiate the chat log
 messages = [{"role": "system", "content": CHAT_GPT_MODEL_ROLE}]
 
 def chatgpt_bot(input):
@@ -27,4 +28,4 @@ def chatgpt_bot(input):
                 {"role": "user", "content": "Where was it played?"}
             ]
         )
-    
+
