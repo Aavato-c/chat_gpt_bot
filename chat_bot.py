@@ -23,6 +23,7 @@ def chatgpt_bot(user_name):
     input_text = input(f"{user_name}: ")
     messages.append({"role": "user", "content": input_text})
     
+    logger.info("Making request to OpenAI")
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=messages)
@@ -43,6 +44,7 @@ def initiate_dialogue():
     print("Thanks. Let's chat!")
     time.sleep(1)
     os.system('cls' if os.name == 'nt' else 'clear')
+    logger.info("Chat log initiated")
     while True:
         chatgpt_bot(user_name)
 
