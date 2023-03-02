@@ -1,8 +1,10 @@
-This is a very simple integration of OpenAI's ChatGPT API in python. 
 
 
-To use:
+# ChatGPT python bot
 
+This is a very simple integration of OpenAI's ChatGPT API in python.
+
+## **Usage**
 
 1. Clone this repository
 2. Make a venv via "python3 -m venv chatGPT_venv"
