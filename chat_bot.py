@@ -37,5 +37,6 @@ def initiate_dialogue():
     print("Thanks. Let's chat!")
 
 
-def main()
+def main():
     os.system('cls' if os.name == 'nt' else 'clear')
+    initiate_dialogue()
