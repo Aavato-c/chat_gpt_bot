@@ -43,3 +43,6 @@ def initiate_dialogue():
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
     initiate_dialogue()
+
+if __name__ == "__main__":
+    main()
