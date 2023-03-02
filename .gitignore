@@ -3,3 +3,4 @@ venv
 __pycache__
 debug.py
 chat_log.json
+log_of_bot.txt

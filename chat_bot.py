@@ -29,6 +29,12 @@ def chatgpt_bot(user_name):
     
     messages.append({"role": "assistant", "content": response['choices'][0]['message']['content']})
     print(f"ChatGPT: {response['choices'][0]['message']['content']})")
+    
+    
+    with open(CHAT_LOG_FILE, 'w') as f:
+        json.dump(messages, f, indent=2)
+        logger.info("Chat log updated")
+        f.close()
 
 
 def initiate_dialogue():
