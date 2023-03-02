@@ -12,3 +12,19 @@ logger = logging.getLogger(__name__)
 # Consts
 CHAT_LOG_FILE = "Chat_log.json"
 
+# Openai tunings for the bot
+CHAT_GPT_MODEL_ROLE = "You are a helpful assistant."
+
+messages = [{"role": "system", "content": CHAT_GPT_MODEL_ROLE}]
+
+def chatgpt_bot(input):
+    openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": "Who won the world series in 2020?"},
+                {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+                {"role": "user", "content": "Where was it played?"}
+            ]
+        )
+    
