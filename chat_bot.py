@@ -40,6 +40,7 @@ messages = [{"role": "system", "content": CHAT_GPT_MODEL_ROLE}]
 def chatgpt_bot(user_name):
     input_text = input(f"{user_name}: ")
     messages.append({"role": "user", "content": input_text})
+    chat_logger.info(f"{user_name}: {input_text}")
     
     logger.info("Making request to OpenAI")
     response = openai.ChatCompletion.create(
@@ -49,11 +50,7 @@ def chatgpt_bot(user_name):
     messages.append({"role": "assistant", "content": response['choices'][0]['message']['content']})
     print(f"ChatGPT: {response['choices'][0]['message']['content']})")
     
-    
-    with open(CHAT_LOG_FILE, 'w') as f:
-        json.dump(messages, f, indent=2)
-        logger.info("Chat log updated")
-        f.close()
+    chat_logger.info(f"ChatGPT: {response['choices'][0]['message']['content']})")
 
 
 def initiate_dialogue():
