@@ -7,16 +7,13 @@ import time
 # Store your api key in .env dile in the same directory as this file
 openai.api_key = os.environ.get('API_OPENAI')
 
-logging.basicConfig(filename='./log_of_bot.txt',format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
-logger = logging.getLogger(__name__)
-import logging
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-
+# Logging
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 def setup_logger(name, log_file, level=logging.INFO):
     """To setup as many loggers as you want"""
 
-    handler = logging.FileHandler(log_file)        
+    handler = logging.FileHandler(log_file))        
     handler.setFormatter(formatter)
 
     logger = logging.getLogger(name)
@@ -25,13 +22,11 @@ def setup_logger(name, log_file, level=logging.INFO):
 
     return logger
 
-# first file logger
-logger = setup_logger('first_logger', 'first_logfile.log')
-logger.info('This is just info message')
+# Basic logger
+logger = setup_logger('default_logger', 'log_of_bot.log')
 
-# second file logger
-super_logger = setup_logger('second_logger', 'second_logfile.log')
-super_logger.error('This is an error message')
+# Chat logger
+chat_logger = setup_logger('second_logger', 'second_logfile.log')
 
 # Consts
 CHAT_LOG_FILE = "Chat_log.json"
