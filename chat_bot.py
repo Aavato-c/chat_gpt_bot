@@ -35,4 +35,7 @@ def initiate_dialogue():
     print("This is a python program that uses OpenAI's ChatGPT API to chat with you.\n\n")
     user_name = input("What is your name? ")
     print("Thanks. Let's chat!")
-    
+
+
+def main()
+    os.system('cls' if os.name == 'nt' else 'clear')
